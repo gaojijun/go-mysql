@@ -291,7 +291,10 @@ func (c *Canal) checkTableMatch(key string) bool {
 				break
 			}
 		}
+	} else {
+		matchFlag = true
 	}
+		
 	// check exclude
 	if matchFlag && c.excludeTableRegex != nil {
 		for _, reg := range c.excludeTableRegex {
